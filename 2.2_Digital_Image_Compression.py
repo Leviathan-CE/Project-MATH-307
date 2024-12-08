@@ -96,4 +96,4 @@ ax2.set_title('Image Aw (10) Still reasonable')
 
 # Show the figure with both images
 plt.show()
-#but 75 looks better
+#but 10 looks okay
