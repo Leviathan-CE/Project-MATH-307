@@ -1,0 +1,45 @@
+import numpy as np
+import imageio as io
+from matplotlib import pyplot as plt
+
+A=io.imread('/Users/Bendasilva/Desktop/MATLAB/Lenna.png')
+#using imageio cuz scipy is depreciated
+print(A,"\n")
+print(A.shape,"\n")
+
+#Print np arrays as images
+plt.imshow(A, interpolation='nearest')
+plt.show()
+
+Ar=A[0]
+
+plt.imshow(Ar, interpolation='nearest')
+plt.show()
+Ab=A[1]
+Ag=A[2]
+
+Art=Ar.T
+
+# Implement SVD:
+Ur, Sr, VTr = np.linalg.svd(Art@Ar)
+print("U matrix:\n", Ur)
+print("Singular values:\n", Sr)
+print("V^T matrix:\n", VTr)
+
+Anew=Ur@Sr@VTr
+print(Anew)
+
+rank=Sr.size
+# todo add counter for loop for each non-zero value
+
+n=VTr.size
+print("VT is : ",VTr[0])
+
+UVr=Ur[0,]*VTr[0]
+print("UVR:",VTr)
+#print("UVR:",UVr)
+A1r=np.max(Sr)*Ur*VTr
+
+
+plt.imshow(A1r,interpolation='nearest')
+plt.show()
