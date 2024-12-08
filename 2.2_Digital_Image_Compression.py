@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 A=mpimg.imread('unnamed.jpg')
 
-A = np.dot(A[...,:3], [0.2989, 0.5870, 0.1140])
+A = np.dot(A[...,:3],[0.2989,0.5870, 0.1140])
 #Convert to greyscale 
 print(A,"\n")
 print("Image is of size:",A.shape,"\n")
@@ -78,7 +78,6 @@ for i in range(0,10):
     ## matrice addition
     NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
     Ai=Ai+NewAddition
-#TODO experiment how many make an acceptable image
 
 Aw=Ai
 
@@ -103,7 +102,6 @@ for i in range(0,20):
     ## matrice addition
     NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
     Ai=Ai+NewAddition
-#TODO experiment how many make an acceptable image
 
 Av=Ai
 
