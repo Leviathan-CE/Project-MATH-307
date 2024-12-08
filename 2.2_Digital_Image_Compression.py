@@ -49,7 +49,7 @@ plt.title("Adding only the first two is not enough:")
 plt.show()
 
 Ai=np.zeros(A.shape)
-for i in range(0,25):
+for i in range(0,3):
     ## matrice addition
     NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
     Ai=Ai+NewAddition
@@ -68,7 +68,7 @@ ax1.set_title('Image A')
 # Second subplot for image Ak
 ax2 = fig.add_subplot(1, 2, 2)  # 1 row, 2 columns, second subplot
 ax2.imshow(Ak, interpolation='nearest',cmap='gray')
-ax2.set_title('Image Ak (25)')
+ax2.set_title('Image Ak (3)')
 
 # Show the figure with both images
 plt.show()
@@ -97,3 +97,28 @@ ax2.set_title('Image Aw (10) Still reasonable')
 # Show the figure with both images
 plt.show()
 #but 10 looks okay
+
+Av=np.zeros(A.shape)
+for i in range(0,20):
+    ## matrice addition
+    NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
+    Ai=Ai+NewAddition
+#TODO experiment how many make an acceptable image
+
+Av=Ai
+
+fig = plt.figure()
+
+# First subplot for image A
+ax1 = fig.add_subplot(1, 2, 1)  # 1 row, 2 columns, first subplot
+ax1.imshow(A, interpolation='nearest',cmap='gray')
+ax1.set_title('Image A')
+
+# Second subplot for image Ak
+ax2 = fig.add_subplot(1, 2, 2)  # 1 row, 2 columns, second subplot
+ax2.imshow(Av, interpolation='nearest',cmap='gray')
+ax2.set_title('Image Aw (20) Better')
+
+# Show the figure with both images
+plt.show()
+#but 20 looks okay
