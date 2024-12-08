@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 
 A=mpimg.imread('unnamed.jpg')
 
-A = np.dot(A[...,:3],[0.2989,0.5870, 0.1140])
+A = np.dot(A[...,:3],[0.2989,0.5870,0.1140])
 #Convert to greyscale 
 print(A,"\n")
 print("Image is of size:",A.shape,"\n")
@@ -50,13 +50,13 @@ plt.show()
 
 Ai=np.zeros(A.shape)
 for i in range(0,3):
-    ## matrice addition
+    # matrice addition
     NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
     Ai=Ai+NewAddition
 # 25 is a reasonable image
 
 Ak=Ai
-# e
+print("Part e:")
 
 fig = plt.figure()
 
@@ -75,7 +75,7 @@ plt.show()
 
 Aw=np.zeros(A.shape)
 for i in range(0,10):
-    ## matrice addition
+    ##matrice addition
     NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
     Ai=Ai+NewAddition
 
@@ -99,7 +99,7 @@ plt.show()
 
 Av=np.zeros(A.shape)
 for i in range(0,20):
-    ## matrice addition
+    # matrice addition
     NewAddition=S[i]*(np.outer(U[:,i],VT[i,:]))
     Ai=Ai+NewAddition
 
